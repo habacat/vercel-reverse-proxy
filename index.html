@@ -15,10 +15,11 @@
             <div class="row margin">
                 <div class="span10 noFloat textCenter">
                     <h1 class="splash"><strong>FDUR</strong>免费使用的网址代理服务</strong></h1>
+			<p>举例：https://www.google.com</p>
                 </div>
                 <div class="span10 noFloat">
                     <div class="searchform">
-                        <input type="text" id="input" placeholder="请输入URL" name="domainname">
+                        <input type="text" id="input" placeholder="请输入URL" name="domainname" value="https://www.">
                         <a id="submitBtn" title="反向代理">Reverse Proxy</a>
                     </div>
                 </div>
@@ -38,7 +39,7 @@
 </body>
 <script>
     // 这个是正则的啊喂
-    const urlPattern = /^(http|https):\/\/[^ "]+$/;
+    const urlPattern = /^((http|https):\/\/[^ "])?+$/;
 
     // 提前把变量定义出来
     const input = document.getElementById('input');
@@ -64,18 +65,17 @@
             console.log("请输入内容！");
         } else if (!urlPattern.test(inputVal)) {
             // 输入的内容不是 URL，给出提示信息
-            alert("请输入有效的URL！");
+            alert("请输入有效的网址！");
         } else {
             // 业务逻辑
             console.log('开始处理业务逻辑')
             // 获取当前的url
-            // const BaseUrl = 'https://fy-proxy.vercel.app';
             const BaseUrl = location.origin;
             // 把输入的内容一截两段
             const [protocol, hostname] = inputVal.split(':/');
 
             // 拼接跳转链接
-            const jumpUrl = `${BaseUrl}/${protocol}${hostname}`;
+            const jumpUrl = `${BaseUrl}/${hostname}`;
             // console.log(jumpUrl)
             // 跳出去
             window.open(jumpUrl, "_blank");

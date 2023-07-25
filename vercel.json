@@ -6,7 +6,11 @@
     { "source": "/h/:match/:url*/", "destination": "http://:match/:url*/" },
     { "source": "/:match/:url(google.com)", "destination": "https://www.google.com/" },
     { "source": "/:url(search.*)", "destination": "https://www.google.com/:url" },
-    { "source": "/:url(scholar.*)", "destination": "https://scholar.google.com/:url" }
-
+    { "source": "/:url(scholar.*)", "destination": "https://scholar.google.com/:url" },
+    { "source": "/wss/:match/:url*", "destination": "wss://:match/:url*" },
+    { "source": "/:protocol/:match/:url*", "destination": ":protocol://:match/:url*" },
+    { "source": "/:protocol/:match/:url*/", "destination": ":protocol://:match/:url*/" },
+    { "source": "/:protocol*/:match/:url*", "destination": ":protocol://:match/:url*" },
+    { "source": "/:protocol*/:match/:url*/", "destination": ":protocol://:match/:url*/" }
   ]
 }

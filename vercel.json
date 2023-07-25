@@ -4,7 +4,9 @@
     { "source": "/:match/:url*/", "destination": "https://:match/:url*/" },
     { "source": "/h/:match/:url*", "destination": "http://:match/:url*" },
     { "source": "/h/:match/:url*/", "destination": "http://:match/:url*/" },
+    { "source": "/:url(google.com)", "destination": "https://www.google.com/" },
     { "source": "/:url(search.*)", "destination": "https://www.google.com/:url" },
     { "source": "/:url(scholar.*)", "destination": "https://scholar.google.com/:url" }
+
   ]
 }
